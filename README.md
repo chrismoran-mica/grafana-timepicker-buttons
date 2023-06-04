@@ -3,11 +3,9 @@
 
 A Grafana panel which allows you to create a list of buttons which set specific times (retrieved from a datasource) on the dashboard's timepicker when clicked.
 
-<p align="center">
-	<img alt="Panel Screenshot Vertical Buttons" src="https://i.imgur.com/ft77DQM.png"/>
-	<img alt="Panel Screenshot Dropdown List" src="https://i.imgur.com/1XvGim1.png"/>
-	<img alt="Panel Screenshot Horizontal Buttons" src="https://i.imgur.com/qUAIQF9.png"/>
-</p>
+<img alt="Panel Screenshot Vertical Buttons" src="https://i.imgur.com/ft77DQM.png"/>
+<img alt="Panel Screenshot Dropdown List" src="https://i.imgur.com/1XvGim1.png"/>
+<img alt="Panel Screenshot Horizontal Buttons" src="https://i.imgur.com/qUAIQF9.png"/>
 
 --------
 
@@ -15,7 +13,7 @@ A Grafana panel which allows you to create a list of buttons which set specific 
 
 This plugin works with Grafana 7.0.0 and up.
 
-For older versions, check out the [releases](https://github.com/WilliamVenner/grafana-timepicker-buttons/releases) page.
+For older versions, check out the [releases](https://github.com/chrismoran-mica/grafana-timepicker-buttons/releases) page.
 
 --------
 
@@ -24,10 +22,10 @@ For older versions, check out the [releases](https://github.com/WilliamVenner/gr
 ```bash
 sudo service grafana-server stop
 cd /var/lib/grafana/plugins
-sudo git clone https://github.com/WilliamVenner/grafana-timepicker-buttons
-sudo mv grafana-timepicker-buttons williamvenner-timepickerbuttons-panel
-sudo chown grafana:grafana williamvenner-timepickerbuttons-panel -R
-sudo chmod 774 williamvenner-timepickerbuttons-panel -R
+sudo git clone https://github.com/chrismoran-mica/grafana-timepicker-buttons
+sudo mv grafana-timepicker-buttons chrismoran-mica-timepickerbuttons-panel
+sudo chown grafana:grafana chrismoran-mica-timepickerbuttons-panel -R
+sudo chmod 774 chrismoran-mica-timepickerbuttons-panel -R
 sudo service grafana-server start
 ```
 
@@ -39,10 +37,8 @@ sudo service grafana-server start
 The timepicker can be configured to display buttons (vertically or horizontally), or as a dropdown list.
 
 <br>
-<p align="center">
-  <img alt="Panel Options Buttons" src="https://i.imgur.com/9wuLCiW.png"/>
-  <img alt="Panel Options Dropdown List" src="https://i.imgur.com/glaCfLy.png"/>
-</p>
+<img alt="Panel Options Buttons" src="https://i.imgur.com/9wuLCiW.png"/>
+<img alt="Panel Options Dropdown List" src="https://i.imgur.com/glaCfLy.png"/>
 <br>
 
 ### Field Mapping
@@ -53,9 +49,7 @@ All dates and times should use UTC.
 The panel can be configured to map fields to the button properties:
 
 <br>
-<p align="center">
-  <img alt="Panel Options" src="https://i.imgur.com/IioqIhH.png"/>
-</p>
+<img alt="Panel Options" src="https://i.imgur.com/IioqIhH.png"/>
 <br>
 
 The data fields returned from the datasource should be mapped with the following panel configuration settings:
@@ -69,16 +63,10 @@ The data fields returned from the datasource should be mapped with the following
 | **Primary Value**     | 1            | _Optional_<br>A Regex pattern to perform on the `Primary Field`. If matched the button will be marked with a `star` icon.                                                         |
 
 <br>
-
-<p align="center">
-  <img alt="Example Screenshot" src="https://i.imgur.com/EbL6oMv.png"/>
-</p>
-
+<img alt="Example Screenshot" src="https://i.imgur.com/EbL6oMv.png"/>
 <br>
 
 --------
 
-<p align="center">
-	<b>Credit</b><br>
-	Logo made by <a href="https://flaticon.com/authors/dinosoftlabs">DinosoftLabs</a> on <a href="https://flaticon.com">www.flaticon.com</a>
-</p>
+<b>Credit</b><br>
+Logo made by <a href="https://flaticon.com/authors/dinosoftlabs">DinosoftLabs</a> on <a href="https://flaticon.com">www.flaticon.com</a>

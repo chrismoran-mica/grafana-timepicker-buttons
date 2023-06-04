@@ -5,13 +5,19 @@ export type TimepickerData = {
   isPrimary?: boolean;
   isCurrentTime: boolean;
   errors: string[];
+  refresh?: string;
+  variableName?: string;
+  variableValue?: string;
 };
 export interface SimpleOptions {
   displayStyle: string;
   displayButtonsHorizontal: boolean;
+  displayIncludeRefreshParameter: boolean
   timeFromOption: string;
   timeToOption?: string;
   buttonTextOption?: string;
   primaryFieldOption?: string;
   primaryFieldValueOption?: string;
+  variableNameOption?: string;
+  variableValueFieldOption?: string;
 }

@@ -1,5 +1,5 @@
 import { dateTimeFormatWithAbbrevation, UrlQueryMap } from '@grafana/data';
-import { getLocationSrv } from '@grafana/runtime';
+import {locationService} from '@grafana/runtime';
 
 /**
  * This formats a time field to ensure the millisecond portion of the epoch time is
@@ -26,7 +26,7 @@ export const getEpochWithoutMillis = (time: number): number => {
 };
 
 /**
- * This changes the QUery map of the URL to effectively change the to and from time.
+ * This changes the Query map of the URL to effectively change the to and from time.
  *
  * @param time_from the start time
  * @param time_to the end time. Defaults to 'now' if null or invalid.
@@ -37,11 +37,32 @@ export function changeTimeRange(time_from: number, time_to?: number) {
   if (typeof time_to !== 'undefined' && time_to !== null && !isNaN(time_to)) {
     queryMap.to = getEpochWithMillis(time_to);
   }
-  getLocationSrv().update({
-    partial: true,
-    replace: true,
-    query: queryMap,
-  });
+
+  locationService.partial(queryMap, true);
+}
+
+export function changeTimeRangeAndVariable(
+  time_from: number,
+  time_to?: number,
+  variable_name?: string,
+  variable_value?: string,
+  refresh?: string
+) {
+  let queryMap: any = { from: getEpochWithMillis(time_from), to: 'now' };
+  if (typeof time_to !== 'undefined' && time_to !== null && !isNaN(time_to)) {
+    queryMap.to = getEpochWithMillis(time_to);
+  }
+
+  if (variable_name !== undefined && variable_name !== '') {
+    queryMap[`var-${variable_name}`] = variable_value;
+  }
+
+  if (refresh !== undefined && refresh !== '') {
+    queryMap.refresh = '5s';
+  }
+
+  locationService.partial(queryMap, true);
+
 }
 
 /**

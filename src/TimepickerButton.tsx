@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './css/TimepickerButton.css';
-import { getPrettyDate, changeTimeRange } from './utils';
+import { getPrettyDate, changeTimeRangeAndVariable } from './utils';
 import { Button, IconName } from '@grafana/ui';
 
 interface TimepickerButtonProps {
@@ -11,6 +11,9 @@ interface TimepickerButtonProps {
   isPrimary: boolean;
   isCurrentTime: boolean;
   errors: string[];
+  refresh?: string;
+  variableName?: string;
+  variableValue?: string;
 }
 
 export class TimepickerButton extends Component<TimepickerButtonProps> {
@@ -21,7 +24,13 @@ export class TimepickerButton extends Component<TimepickerButtonProps> {
 
   handleClick() {
     if (this.props.errors.length === 0) {
-      changeTimeRange(this.props.time_from, this.props.time_to);
+      changeTimeRangeAndVariable(
+        this.props.time_from,
+        this.props.time_to,
+        this.props.variableName,
+        this.props.variableValue,
+        this.props.refresh
+      );
     }
   }
 
