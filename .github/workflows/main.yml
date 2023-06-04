@@ -76,7 +76,7 @@ jobs:
           args: buildAll
 
       - name: Sign plugin
-        run: yarn sign
+        run: yarn sign --rootUrls "${ROOT_URLS}"
         env:
           ROOT_URLS: ${{ secrets.ALLOWED_ROOT_URLS }}
           GRAFANA_API_KEY: ${{ secrets.GRAFANA_API_KEY }} # Requires a Grafana API key from Grafana.com.
@@ -119,10 +119,10 @@ jobs:
 
       - name: Lint plugin
         run: |
-          git clone https://github.com/grafana/plugin-validator
-          pushd ./plugin-validator/cmd/plugincheck
-          go install
-          popd
+          # git clone https://github.com/grafana/plugin-validator
+          # pushd ./plugin-validator/cmd/plugincheck
+          # go install
+          # popd
           # plugincheck ${{ steps.metadata.outputs.archive }}
 
       - name: Create release
