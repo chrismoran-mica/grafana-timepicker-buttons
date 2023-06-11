@@ -55,6 +55,7 @@ export function changeTimeRangeAndVariable(
 
   if (variable_name !== undefined && variable_name !== '') {
     queryMap[`var-${variable_name}`] = variable_value;
+    queryMap["refresh"] = "5s";
   }
 
   if (refresh !== undefined && refresh !== '') {
