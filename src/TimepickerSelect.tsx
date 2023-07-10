@@ -16,9 +16,9 @@ const TimepickerCompareFn = (k = "time_from"): (a: TimepickerData,b: TimepickerD
     let bo = (b as any)[k];
     if (ao === bo) {
       return 0;
-    } else if(ao < bo) {
-      return -1;
     } else if(ao > bo) {
+      return -1;
+    } else if(ao < bo) {
       return 1;
     }
     return 0;
