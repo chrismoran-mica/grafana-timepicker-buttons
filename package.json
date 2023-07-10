@@ -1,6 +1,6 @@
 {
   "name": "cmmoran-timepickerbuttons-panel",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Datasource-configured buttons panel plugin which set the time range of your Grafana dashboard",
   "scripts": {
     "build": "webpack -c ./.config/webpack/webpack.config.ts --env production",
