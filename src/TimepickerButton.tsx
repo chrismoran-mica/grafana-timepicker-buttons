@@ -29,7 +29,6 @@ export class TimepickerButton extends Component<TimepickerButtonProps> {
         this.props.time_to,
         this.props.variableName,
         this.props.variableValue,
-        this.props.refresh
       );
     }
   }

@@ -32,13 +32,6 @@ export const plugin = new PanelPlugin<SimpleOptions>(Panel).setPanelOptions((bui
       defaultValue: false,
       showIf: (config) => config.displayStyle === 'button',
     })
-    .addBooleanSwitch({
-      path: 'displayIncludeRefreshParameter',
-      name: 'Include Refresh Parameter',
-      description: 'Refresh dashboard parameter will be set.',
-      category: ['Display'],
-      defaultValue: false,
-    })
     .addCustomEditor({
       id: 'timeFromOption',
       path: 'timeFromOption',

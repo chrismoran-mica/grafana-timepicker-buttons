@@ -46,7 +46,6 @@ export function changeTimeRangeAndVariable(
   time_to?: number,
   variable_name?: string,
   variable_value?: string,
-  refresh?: string
 ) {
   let queryMap: any = { from: getEpochWithMillis(time_from), to: 'now' };
   if (typeof time_to !== 'undefined' && time_to !== null && !isNaN(time_to)) {
@@ -55,11 +54,6 @@ export function changeTimeRangeAndVariable(
 
   if (variable_name !== undefined && variable_name !== '') {
     queryMap[`var-${variable_name}`] = variable_value;
-    queryMap["refresh"] = "5s";
-  }
-
-  if (refresh !== undefined && refresh !== '') {
-    queryMap.refresh = '5s';
   }
 
   locationService.partial(queryMap, true);
