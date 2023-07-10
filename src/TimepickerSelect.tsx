@@ -10,7 +10,7 @@ interface TimepickerSelectProps {
   timepickerData: TimepickerData[];
 }
 
-const TimepickerCompareFn = (k = "from_time"): (a: TimepickerData,b: TimepickerData) => number => {
+const TimepickerCompareFn = (k = "time_from"): (a: TimepickerData,b: TimepickerData) => number => {
   return (a: TimepickerData, b: TimepickerData): number => {
     let ao = (a as any)[k];
     let bo = (b as any)[k];
